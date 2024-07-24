@@ -17,11 +17,6 @@ module.exports = {
           context.report({
             node,
             message: "Filename is not in kebab-case.",
-            fix: function (fixer) {
-              // ファイル名をkebab-caseに変換
-              const kebabName = baseName.replace(/([A-Z])/g, "-$1").toLowerCase();
-              return fixer.replaceTextRange([filename.length - baseName.length, filename.length], kebabName);
-            },
           });
         }
       },
